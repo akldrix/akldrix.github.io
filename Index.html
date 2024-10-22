@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Онлайн-кофейня</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Онлайн-кофейня</h1>
+
+        <nav>
+
+            <button class="nav-button" onclick="showPage('menu')">Меню</button>
+
+            <button class="nav-button" onclick="showPage('cart')">Корзина</button>
+
+        </nav>
+
+      
+
+    </header>
+
+
+
+</div>
+
+
+
+    <section id="menu-page">
+
+        <h2>Меню</h2>
+
+        <div class="menu-container">
+
+        <div class="menu-item" data-price="150">
+
+            <span>Эспрессо</span>
+
+            <span class="price">150 ₽</span>
+
+            <div class = "img-container">
+
+              <img src="Espresso.com.png" alt="Чашка кофе" class="img">
+
+            </div>
+
+             
+
+            <button onclick="addToCart('Эспрессо', 150)">Добавить в корзину</button>
+
+             <button onclick="deleteFromCart('Эспрессо', 150)">Удалить</button>
+
+        </div>
+
+        
+
+       <div class="menu-item" data-price="180">
+
+            <span>Американо</span>
+
+            <span class="price">180 ₽</span>
+
+            <div class = "img-container">
+
+              <img src="Americano.png" alt="Чашка кофе" class="img">
+
+            </div>
+
+             
+
+            <button onclick="addToCart('Американо', 180)">Добавить в корзину</button>
+
+             <button onclick="deleteFromCart('Американо', 180)">Удалить</button>
+
+        </div>
+
+        <div class="menu-item" data-price="200">
+
+            <span>Капучино</span>
+
+            <span class="price">200 ₽</span>
+
+               <div class = "img-container">
+
+
+
+              <img src="Cappuccino.png" alt="Чашка кофе" class="drimg">
+
+
+
+            </div>
+
+            <button onclick="addToCart('Капучино', 200)">Добавить в корзину</button>
+
+    <button onclick="deleteFromCart('Капучино', 200)">Удалить</button>
+
+        </div>
+
+        <div class="menu-item" data-price="220">
+
+            <span>Латте</span>
+
+            <span class="price">220 ₽</span>
+
+               <div class = "img-container">
+
+
+
+              <img src="Latte.png" alt="Чашка кофе" class="drimg">
+
+
+
+            </div>
+
+            <button onclick="addToCart('Латте', 220)">Добавить в корзину</button>
+
+             <button onclick="deleteFromCart('Латте', 220)">Удалить</button>
+
+        </div>
+
+        <div class="menu-item" data-price="220">
+
+            <span>Айс-Латте</span>
+
+            <span class="price">220 ₽</span>
+
+              <div class = "img-container">
+
+
+
+              <img src="Ice-Latte.png" alt="Чашка кофе" class="img">
+
+
+
+            </div>
+
+            <button onclick="addToCart('Айс-Латте', 220)">Добавить в корзину</button>
+
+             <button onclick="deleteFromCart('Айс-Латте', 220)">Удалить</button>
+
+        </div>
+
+        <div class="menu-item" data-price="150">
+
+
+
+            <span>Флэт-Уайт</span>
+
+
+
+            <span class="price">230 ₽</span>
+
+            <div class = "img-container">
+
+              <img src="Flat-White.png" alt="Чашка кофе" class="img">
+
+            </div>
+
+             
+
+            <button onclick="addToCart('Флэт-Уайт', 230)">Добавить в корзину</button>
+
+             <button onclick="deleteFromCart('Флэт-Уайт', 230)">Удалить</button>
+
+        </div>
+
+        <div class="menu-item" data-price="240">
+
+            <span>Гляссе</span>
+
+            <span class="price">240 ₽</span>
+
+               <div class = "img-container">
+
+
+
+              <img src="Affogato.png" alt="Чашка кофе" class="img">
+
+
+
+            </div>
+
+            <button onclick="addToCart('Гляссе', 240)">Добавить в корзину</button>
+
+             <button onclick="deleteFromCart('Гляссе', 240)">Удалить</button>
+
+        </div>
+
+        </div>
+
+        <!-- Кнопка для добавления всех товаров в корзину -->
+
+        <button onclick="addAllToCart()" class="add-all-button">Добавить все товары в корзину</button>
+
+         <button onclick="clearCart()" class="clear-cart-button">Очистить корзину</button>
+
+           <button class="cart-button" onclick="showPage('cart')">
+
+<img src= 'Cart.png' alt='Корзина' class ="cart">
+
+            <span class="cart-counter" id="cart-count">0</span>
+
+        </button>
+
+    </section>
+
+
+
+    <!-- Корзина-->
+
+    <section id="cart-page" class="hidden">
+
+        <h2>Корзина</h2>
+
+        <ul id="cart-items"></ul>
+
+        <div id="delivery">
+
+            <h3>Введите адрес доставки:</h3>
+
+            <input type="text" id="address" placeholder="Адрес доставки">
+
+        </div>
+
+        <div id="total-price">Итого: 0 ₽</div>
+
+        <button onclick="placeOrder()" class="order-button">Оформить заказ</button>
+
+        <button onclick="showPage('menu')" class="back-button">Вернуться к меню</button>
+
+    </section>
+
+
+
+    <div id="notification" class="notification hidden"></div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+
