@@ -336,16 +336,3 @@ function clearOldCart() {
 
 }
 
-function emptyCart() {
-
-    if(totalPrice<1)
-
-    {
-
-        clearOldCart();
-
-    }
-
-}
-
-emptyCart();
