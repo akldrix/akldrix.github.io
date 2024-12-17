@@ -206,15 +206,9 @@ window.onload = function() {
 
   for (let i = 0; i < images.length; i++) {
       let loader = document.getElementById('loader' + (i + 1));
-
-      // Когда изображение начинает загружаться
       loader.style.display = 'block';
-
-      // Когда изображение загружено
       images[i].onload = function() {
-          // Скрываем колесико загрузки
           loader.style.display = 'none';
-          // Отображаем изображение
           images[i].style.display = 'block';
       };
   }
