@@ -202,7 +202,7 @@ function filterCategory(category) {
   });
 }
 window.onload = function() {
-  var images = document.getElementsById('img');
+  const images = document.getElementsById('img');
 
   for (let i = 0; i < images.length; i++) {
       let loader = document.getElementById('loader' + (i + 1));
