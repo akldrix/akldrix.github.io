@@ -40,7 +40,7 @@ nav {
   background-color: #69271b;
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(255, 99, 71, 0.5);
-  transition: all 0.5s;
+  transition: all 1s;
 }
 .cart-button {
   bottom: 30px;
@@ -110,7 +110,7 @@ h2 {
 .menu-item:hover {
   transform: scale(1.02);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 button {
@@ -127,7 +127,7 @@ button:hover {
   background-color: #69271b;
   transform: translateY(-2px);
   box-shadow: 2px 4px 10px rgba(115, 46, 33, 0.4);
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 .add-all-button,
@@ -153,7 +153,7 @@ button:hover {
   background-color: #69271b;
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(255, 99, 71, 0.5);
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 #cart-items {
@@ -173,7 +173,7 @@ button:hover {
 #cart-items li:hover {
   background-color: #fffdf1;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 #delivery {
@@ -288,7 +288,7 @@ input[type="com-text"] {
 
 #filters button:hover {
   background-color: #69271b;
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 #filters button:focus {
