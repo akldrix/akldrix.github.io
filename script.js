@@ -201,3 +201,13 @@ function filterCategory(category) {
     }
   });
 }
+window.onload = function(){
+let loader = document.getElementById('loader');
+let image = document.getElementById('img');
+
+loader.style.display = 'block';
+image.onload = function(){
+  loader.style.display = 'none';
+  image.style.display = 'block';
+}
+}
