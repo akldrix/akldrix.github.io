@@ -201,13 +201,21 @@ function filterCategory(category) {
     }
   });
 }
-window.onload = function(){
-let loader = document.getElementById('loader');
-let image = document.getElementById('img');
+window.onload = function() {
+  var images = document.getElementsByClassName('image');
 
-loader.style.display = 'block';
-image.onload = function(){
-  loader.style.display = 'none';
-  image.style.display = 'block';
-}
-}
+  for (let i = 0; i < images.length; i++) {
+      let loader = document.getElementById('loader' + (i + 1));
+
+      // Когда изображение начинает загружаться
+      loader.style.display = 'block';
+
+      // Когда изображение загружено
+      images[i].onload = function() {
+          // Скрываем колесико загрузки
+          loader.style.display = 'none';
+          // Отображаем изображение
+          images[i].style.display = 'block';
+      };
+  }
+};

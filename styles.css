@@ -313,6 +313,3 @@ input[type="com-text"] {
   100% { transform: rotate(360deg); }
 }
 
-.image-container {
-  position: relative;
-}
