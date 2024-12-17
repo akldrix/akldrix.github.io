@@ -201,15 +201,3 @@ function filterCategory(category) {
     }
   });
 }
-window.onload = function() {
-  const images = document.getElementsById('img');
-
-  for (let i = 0; i < images.length; i++) {
-      let loader = document.getElementById('loader' + (i + 1));
-      loader.style.display = 'block';
-      images[i].onload = function() {
-          loader.style.display = 'none';
-          images[i].style.display = 'block';
-      };
-  }
-};
