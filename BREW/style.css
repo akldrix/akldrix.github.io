@@ -26,11 +26,10 @@ body {
   padding-top: 1rem;
   padding-left: 0;
   padding-bottom: 10px;
-  border-bottom: 2px solid #000000;
+  border-bottom: 0.5px solid #000000;
   position: sticky;
   top: 0;
   z-index: 1000;
-  
 }
 .header__content {
   display: flex;
@@ -42,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-    font-family: "Alfa Slab One", sans-serif;
+  font-family: "Alfa Slab One", sans-serif;
 }
 .header__title {
   font-size: 1.75rem;
@@ -63,7 +62,7 @@ body {
   font-weight: 500;
 }
 .nav__link:hover {
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 .nav__link.active {
   color: #000000;
@@ -81,7 +80,7 @@ body {
   position: relative;
 }
 .icon-btn:hover {
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 .cart-count,
 .favorites-count {
@@ -111,13 +110,11 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-
 }
 .hero__text {
   flex: 1 1 45%;
   max-width: 600px;
   margin-bottom: 1.2rem;
-  
 }
 .hero__text h2 {
   font-family: "Alfa Slab One", sans-serif;
@@ -125,11 +122,13 @@ body {
   line-height: 100%;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  border-bottom: 3px solid black;
 }
 .hero__text p {
   font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: #555;
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #000000;
 }
 .hero__image {
   flex: 1 1 45%;
@@ -149,7 +148,7 @@ body {
   background-color: #fff;
 }
 .section-title {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -166,8 +165,8 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.filter-btn:hover{
-  background-color: #D9D9D9;
+.filter-btn:hover {
+  background-color: #d9d9d9;
 }
 .filter-btn.active {
   background-color: #000000;
@@ -177,29 +176,32 @@ body {
 .menu-items {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
+  gap: 1.6rem;
 }
 .menu-item {
   text-align: center;
-  border: 1px solid #eee;
   border-radius: 8px;
   padding: 1rem;
   transition: box-shadow 0.3s;
   background-color: #fff;
   position: relative;
 }
-.menu-item:hover {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
 .menu-item img {
-  max-width: 100px;
+  max-width: 200px;
   margin-bottom: 1rem;
 }
+.txt {
+  line-height: 100%;
+}
 .menu-item h3 {
+  margin-left: 30px;
+  text-align: left;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 .price {
+  margin-left: 30px;
+  text-align: left;
   font-weight: bold;
   color: #000000;
   margin-bottom: 0.5rem;
@@ -211,17 +213,17 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 32px;
+  right: 55px;
   font-size: 1.2rem;
   color: #ccc;
   transition: color 0.3s;
 }
 .favorite-btn.favorited {
-  color: #000000;
+  color: #ffffff;
 }
 .favorite-btn:hover {
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 
 /* Кнопки добавления в корзину и контролы */
@@ -233,12 +235,14 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 4px;
+  margin-left: 30px;
 }
 .add-to-cart-btn:hover {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 .cart-control {
   margin-top: 0.5rem;
+  margin-left: -90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,7 +258,7 @@ body {
   transition: background-color 0.3s;
 }
 .cart-control button:hover {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 .quantity-display {
   margin: 0 0.5rem;
@@ -263,11 +267,14 @@ body {
 }
 
 /* ================= ДОСТАВКА ================= */
+.container.fast-delivery__content {
+  margin-left: 350px;
+}
 .fast-delivery {
   background-color: #f8f8f8;
   padding: 2rem 0;
-  border-top: 2px solid #000000;
-  border-bottom: 2px solid #000000;
+  border-top: 0.5px solid #000000;
+  border-bottom: 0.5px solid #000000;
 }
 .fast-delivery__content {
   display: flex;
@@ -278,6 +285,9 @@ body {
 .fast-delivery__info {
   flex: 1 1 40%;
   margin-bottom: 1rem;
+}
+.fast-delivery__info h2 {
+  margin-left: -270px;
 }
 .fast-delivery__features {
   flex: 1 1 50%;
@@ -294,7 +304,7 @@ body {
 .contact-section {
   padding: 2rem 0;
   background-color: #fff;
-  border-bottom: 2px solid #000000;
+  border-bottom: 0.5px solid #000000;
 }
 .contact__content {
   text-align: center;
@@ -317,7 +327,7 @@ body {
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
-  border-color: #D9D9D9;
+  border-color: #d9d9d9;
 }
 
 /* ================= CTA ================= */
@@ -347,7 +357,7 @@ body {
   text-decoration: none;
 }
 .btn:hover {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
 /* ================= ПОДВАЛ ================= */
@@ -355,7 +365,7 @@ body {
   background-color: #f8f8f8;
   padding: 1rem 0;
   text-align: center;
-  border-top: 2px solid #000000;
+  border-top: 0.5px solid #000000;
 }
 .footer__content p {
   color: #666;
@@ -383,7 +393,7 @@ body {
   cursor: pointer;
 }
 .close-modal:hover {
-  color: #D9D9D9
+  color: #d9d9d9;
 }
 
 /* Формы авторизации */
@@ -440,7 +450,7 @@ body {
   cursor: pointer;
 }
 .close-cart:hover {
-  color: #D9D9D9;
+  color: #d9d9d9;
 }
 .cart-content {
   flex: 1;
@@ -473,7 +483,7 @@ body {
   transition: background-color 0.3s;
 }
 .cart-item-controls button:hover {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 .cart-quantity-display {
   min-width: 20px;
@@ -543,7 +553,7 @@ body {
   transition: background-color 0.3s;
 }
 .remove-favorite-btn:hover {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
 /* ================= АДАПТИВНОСТЬ ================= */
@@ -574,7 +584,6 @@ body {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-
 }
 
 /* Панель корзины – убрано затемнение */
