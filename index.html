@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.R.E.W. – Your Coffee, Your Way</title>
+  <!-- Стили -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Иконки (Font Awesome CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One:regular" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ========== ШАПКА ========== -->
+<header class="header">
+  <div class="container header__content">
+    <!-- ЛОГОТИП -->
+    <div class="header__logo">
+      <h1 class="header__title">B.R.E.W.</h1>
+    </div>
+
+    <!-- НАВИГАЦИЯ -->
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#hero" class="nav__link active">Home</a></li>
+        <li><a href="#menu" class="nav__link">Menu</a></li>
+        <li><a href="#delivery" class="nav__link">Delivery</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ИКОНКИ -->
+    <div class="header__icons">
+      <!-- Избранное -->
+      <button class="icon-btn" id="favorites-btn" title="Favorites">
+        <i class="fas fa-heart"></i>
+        <span class="favorites-count" id="favorites-count">0</span>
+      </button>
+      <!-- Личный кабинет -->
+      <button class="icon-btn" id="user-btn" title="User Account">
+        <i class="fas fa-user"></i>
+      </button>
+      <!-- Корзина -->
+      <button class="icon-btn" id="cart-btn" title="Shopping Cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ========== ГЛАВНАЯ СЕКЦИЯ (HERO) ========== -->
+<section class="hero" id="hero">
+  <div class="container hero__content">
+    <div class="hero__text">
+      <h2>
+        Your<br/> coffee,<br/> your <br/>way
+      </h2>
+      <p>
+        From rich espresso shots to sweet frappés,<br />
+        brew it your way!
+        At B.R.E.W. we celebrate the art of coffee. From nitro-infused cold
+        brews to bold espresso blends, our baristas craft each cup with
+        passion. Enjoy the perfect brew, every time.
+      </p>
+    </div>
+    <div class="hero__image">
+      <img src="Images/bannercup.svg" alt="Coffee Cup" />
+    </div>
+  </div>
+</section>
+
+<!-- ========== РАЗДЕЛ МЕНЮ ========== -->
+<section class="menu-section" id="menu">
+  <div class="container">
+    <h2 class="section-title">MENU</h2>
+    <!-- Кнопки фильтрации -->
+    <div class="menu-filter">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="coffee">Coffee</button>
+      <button class="filter-btn" data-category="not-coffee">Not Coffee</button>
+      <button class="filter-btn" data-category="food">Food</button>
+      <button class="filter-btn" data-category="desserts">Desserts</button>
+    </div>
+
+    <!-- Карточки товаров -->
+    <div class="menu-items">
+      <!-- Coffee -->
+      <div class="menu-item" data-category="coffee" data-name="Espresso" data-price="2.00">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/espresso.svg" alt="Espresso" />
+        <h3>Espresso</h3>
+        <p class="price">$2.00</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="coffee" data-name="Cappuccino" data-price="4.00">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/cappucino.svg" alt="Cappuccino" />
+        <h3>Cappuccino</h3>
+        <p class="price">$4.00</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="coffee" data-name="Latte" data-price="3.00">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/latte.svg" alt="Latte" />
+        <h3>Latte</h3>
+        <p class="price">$3.00</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="coffee" data-name="Americano" data-price="2.50">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/americano.svg" alt="Americano" />
+        <h3>Americano</h3>
+        <p class="price">$2.50</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="coffee" data-name="Iced Latte" data-price="4.50">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/icelatte.svg" alt="Iced Latte" />
+        <h3>Iced Latte</h3>
+        <p class="price">$4.50</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="coffee" data-name="Bumble" data-price="5.00">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/bumble.svg" alt="Bumble" />
+        <h3>Bumble</h3>
+        <p class="price">$5.00</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      
+      <!-- Not Coffee -->
+      <div class="menu-item" data-category="not-coffee" data-name="Green Tea" data-price="2.50">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/greentea.svg" alt="Green Tea" />
+        <h3>Green Tea</h3>
+        <p class="price">$2.50</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="not-coffee" data-name="Lemonade" data-price="3.50">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/Lemonade.svg" alt="Lemonade" />
+        <h3>Lemonade</h3>
+        <p class="price">$3.50</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      
+      <!-- Food -->
+      <div class="menu-item" data-category="food" data-name="Sandwich" data-price="5.50">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/Sandwich.svg" alt="Sandwich" />
+        <h3>Sandwich</h3>
+        <p class="price">$5.50</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="food" data-name="Burrito" data-price="6.00">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/burrito.svg" alt="Burrito" />
+        <h3>Burrito</h3>
+        <p class="price">$6.00</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      
+      <!-- Desserts -->
+      <div class="menu-item" data-category="desserts" data-name="Brownie" data-price="3.50">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/Browney.svg" alt="Brownie" />
+        <h3>Brownie</h3>
+        <p class="price">$3.50</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+      <div class="menu-item" data-category="desserts" data-name="Croissant" data-price="2.00">
+        <button class="favorite-btn" title="Add to favorites"><i class="far fa-heart"></i></button>
+        <img src="Images/Croissant.svg" alt="Croissant" />
+        <h3>Croissant</h3>
+        <p class="price">$2.00</p>
+        <button class="add-to-cart-btn">Add to cart</button>
+        <div class="cart-control" style="display: none;">
+          <button class="decrement-btn">–</button>
+          <span class="quantity-display">0</span>
+          <button class="increment-btn">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== РАЗДЕЛ ДОСТАВКИ ========== -->
+<section class="fast-delivery" id="delivery">
+  <div class="container fast-delivery__content">
+    <div class="fast-delivery__info">
+      <h2 class="section-title">FAST DELIVERY</h2>
+      <p>DAILY<br />from <strong>7.00</strong> to <strong>23.00</strong></p>
+    </div>
+    <div class="fast-delivery__features">
+      <div class="feature-item">
+        <h4>Fast Service</h4>
+        <p>Quick and efficient, straight to your door.</p>
+      </div>
+      <div class="feature-item">
+        <h4>Convenient Locations</h4>
+        <p>Order from any of our spots around the city.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== КОНТАКТЫ ========== -->
+<section class="contact-section" id="contact">
+  <div class="container contact__content">
+    <h2 class="section-title">CONTACT US</h2>
+    <p>Have questions or want to give feedback? Reach out below!</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== CTA (ЗАКАЗ ОНЛАЙН) ========== -->
+<section class="cta">
+  <div class="container cta__content">
+    <h2>ORDER ONLINE – GRAB YOUR COFFEE, NO WAITING!</h2>
+    <a href="#menu" class="btn cta__button">MAKE AN ORDER</a>
+  </div>
+</section>
+
+<!-- ========== ПОДВАЛ ========== -->
+<footer class="footer">
+  <div class="container footer__content">
+    <p>&copy; 2025 B.R.W. Coffee. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ========== МОДАЛЬНОЕ ОКНО АВТОРИЗАЦИИ ========== -->
+<div class="modal-overlay" id="user-modal">
+  <div class="modal">
+    <button class="close-modal" id="close-user-modal">&times;</button>
+    <div class="auth-container">
+      <!-- Форма входа -->
+      <div id="login-form" class="auth-form active">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <button id="login-submit" class="btn">Login</button>
+        <p>Don't have an account? <a href="#" id="show-register">Register</a></p>
+      </div>
+      <!-- Форма регистрации -->
+      <div id="register-form" class="auth-form">
+        <h2>Register</h2>
+        <input type="text" id="register-username" placeholder="Username" />
+        <input type="password" id="register-password" placeholder="Password" />
+        <input type="password" id="register-password2" placeholder="Confirm Password" />
+        <button id="register-submit" class="btn">Register</button>
+        <p>Already have an account? <a href="#" id="show-login">Login</a></p>
+      </div>
+      <!-- Если пользователь уже вошёл -->
+      <div id="logged-in-info" class="auth-form">
+        <h2>Welcome, <span id="logged-in-username"></span>!</h2>
+        <button id="logout-btn" class="btn">Logout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ПАНЕЛЬ КОРЗИНЫ ========== -->
+<div class="cart-overlay" id="cart-panel">
+  <div class="cart-panel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" id="close-cart-panel">&times;</button>
+    </div>
+    <div class="cart-content" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total-price">$0.00</span>
+      </div>
+      <button class="btn" id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== ПАНЕЛЬ ИЗБРАННОГО ========== -->
+<div class="favorites-overlay" id="favorites-panel">
+  <div class="favorites-panel">
+    <div class="favorites-header">
+      <h2>Your Favorites</h2>
+      <button class="close-favorites" id="close-favorites-panel">&times;</button>
+    </div>
+    <div class="favorites-content" id="favorites-items">
+      <!-- Избранные товары будут добавляться сюда -->
+    </div>
+  </div>
+</div>
+
+<!-- СКРИПТЫ -->
+<script src="script.js"></script>
+</body>
+</html>
