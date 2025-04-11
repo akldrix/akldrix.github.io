@@ -5,21 +5,37 @@ const navLinks = document.querySelectorAll('.nav__link');
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+    const href = link.getAttribute('href');
+    // Если ссылка ведёт на "Home" (секция hero) — прокручиваем до самого верха
+    if (href === '#hero') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const targetId = href.substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   });
 });
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.forEach(navLink => navLink.classList.remove('active'));
-    link.classList.add('active');
-  });
-}
-);
 
+// Обработчик scroll для динамической подсветки активной ссылки
+window.addEventListener('scroll', () => {
+  const fromTop = window.scrollY;
+  navLinks.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section) {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      // С поправкой в 50px (можно настроить)
+      if (fromTop >= sectionTop - 50 && fromTop < sectionTop + sectionHeight - 50) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    }
+  });
+});
 
 /********************************************
  * 2. Фильтрация меню (All, Coffee и т.д.)
@@ -30,7 +46,8 @@ const menuItems = document.querySelectorAll('.menu-item');
 function filterMenu(category) {
   menuItems.forEach(item => {
     const itemCategory = item.getAttribute('data-category');
-    item.style.display = (category === 'all' || itemCategory === category) ? 'block' : 'none';
+    item.style.display =
+      category === 'all' || itemCategory === category ? 'block' : 'none';
   });
 }
 
@@ -91,14 +108,14 @@ const cartItemsContainer = document.getElementById('cart-items');
 const cartTotalPrice = document.getElementById('cart-total-price');
 const checkoutBtn = document.getElementById('checkout-btn');
 
-cartBtn.addEventListener('click', () => { 
-  cartOverlay.style.width = '100%'; 
+cartBtn.addEventListener('click', () => {
+  cartOverlay.style.width = '100%';
 });
-closeCartBtn.addEventListener('click', () => { 
-  cartOverlay.style.width = '0'; 
+closeCartBtn.addEventListener('click', () => {
+  cartOverlay.style.width = '0';
 });
-cartOverlay.addEventListener('click', (e) => { 
-  if (e.target === cartOverlay) cartOverlay.style.width = '0'; 
+cartOverlay.addEventListener('click', (e) => {
+  if (e.target === cartOverlay) cartOverlay.style.width = '0';
 });
 
 /********************************************
@@ -182,48 +199,48 @@ function renderCart() {
   let total = 0;
   cart.forEach((item) => {
     total += item.price * item.quantity;
-    
+
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('cart-item');
-    
+
     const nameSpan = document.createElement('span');
     nameSpan.classList.add('cart-item-name');
     nameSpan.textContent = item.name;
-    
+
     const controlsDiv = document.createElement('div');
     controlsDiv.classList.add('cart-item-controls');
-    
+
     const decBtn = document.createElement('button');
     decBtn.textContent = '–';
-    
+
     const qtySpan = document.createElement('span');
     qtySpan.classList.add('cart-quantity-display');
     qtySpan.textContent = item.quantity;
-    
+
     const incBtn = document.createElement('button');
     incBtn.textContent = '+';
-    
+
     controlsDiv.appendChild(decBtn);
     controlsDiv.appendChild(qtySpan);
     controlsDiv.appendChild(incBtn);
-    
+
     const priceSpan = document.createElement('span');
     priceSpan.classList.add('cart-item-price');
     priceSpan.textContent = '$' + (item.price * item.quantity).toFixed(2);
-    
+
     itemDiv.appendChild(nameSpan);
     itemDiv.appendChild(controlsDiv);
     itemDiv.appendChild(priceSpan);
-    
+
     cartItemsContainer.appendChild(itemDiv);
-    
+
     incBtn.addEventListener('click', () => {
       item.quantity++;
       setItemQuantity(item.name, item.price, item.quantity);
       renderCart();
       updateProductCardQuantity(item.name, item.quantity);
     });
-    
+
     decBtn.addEventListener('click', () => {
       item.quantity--;
       setItemQuantity(item.name, item.price, item.quantity);
@@ -246,7 +263,7 @@ checkoutBtn.addEventListener('click', () => {
   // Очищаем корзину
   cart = [];
   renderCart();
-  updateCartCountDisplay(); // Сбрасываем индикатор корзины до 0
+  updateCartCountDisplay();
   // Сбрасываем количество на карточках товаров
   productCards.forEach(card => {
     const name = card.getAttribute('data-name');
@@ -285,15 +302,15 @@ function renderFavorites() {
   favorites.forEach((item, index) => {
     const favDiv = document.createElement('div');
     favDiv.classList.add('favorites-item');
-    
+
     const img = document.createElement('img');
     img.src = item.img;
     img.alt = item.name;
-    
+
     const nameSpan = document.createElement('span');
     nameSpan.classList.add('favorites-item-name');
     nameSpan.textContent = item.name;
-    
+
     const removeBtn = document.createElement('button');
     removeBtn.classList.add('remove-favorite-btn');
     removeBtn.textContent = 'Remove';
@@ -313,7 +330,7 @@ function renderFavorites() {
         }
       }
     });
-    
+
     favDiv.appendChild(img);
     favDiv.appendChild(nameSpan);
     favDiv.appendChild(removeBtn);
@@ -387,12 +404,24 @@ function checkAuthState() {
 }
 checkAuthState();
 
-userBtn.addEventListener('click', () => { userModal.style.display = 'flex'; });
-closeUserModalBtn.addEventListener('click', () => { userModal.style.display = 'none'; });
-window.addEventListener('click', (e) => { if (e.target === userModal) userModal.style.display = 'none'; });
+userBtn.addEventListener('click', () => {
+  userModal.style.display = 'flex';
+});
+closeUserModalBtn.addEventListener('click', () => {
+  userModal.style.display = 'none';
+});
+window.addEventListener('click', (e) => {
+  if (e.target === userModal) userModal.style.display = 'none';
+});
 
-showRegisterLink.addEventListener('click', (e) => { e.preventDefault(); showRegisterForm(); });
-showLoginLink.addEventListener('click', (e) => { e.preventDefault(); showLoginForm(); });
+showRegisterLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  showRegisterForm();
+});
+showLoginLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  showLoginForm();
+});
 
 function registerUser(username, password) {
   const existingUser = users.find(u => u.username === username);
